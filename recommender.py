@@ -9,7 +9,7 @@ class Recommender:
         self.n_users = len(ids)
         self.ids = ids
         self.users = {userId:User() for userId in ids}
-        self.tags = pd.read_csv('fit.csv')
+        self.tags = pd.read_csv('tags.csv')
         self.tags.vector = self.tags.vector.apply(literal_eval)
         self.seen = []
         self.liked = []
