@@ -9,16 +9,8 @@ class Recommender:
         self.n_users = len(ids)
         self.ids = ids
         self.users = {userId:User() for userId in ids}
-<<<<<<< HEAD
-        self.tags = pd.read_csv('fit.csv', index_col = 0)
 
-=======
-<<<<<<< HEAD
         self.tags = pd.read_csv('fit.csv', index_col = 0)
-=======
-        self.tags = pd.read_csv('tags.csv')
->>>>>>> ac4dfaee54ee52a97fec751f019a6c17298bace4
->>>>>>> a669377816330b1c7afc09212fbf70ea802aa0d9
         self.tags.vector = self.tags.vector.apply(literal_eval)
         self.seen = []
         self.liked = []
@@ -80,16 +72,7 @@ class User:
         self.all = []
     
     def recommend(self, similarities, n = 1):
-<<<<<<< HEAD
         similarities = similarities.drop(index = self.liked + self.seen, errors = 'ignore')
         return similarities.nlargest(n, 0).index.values[-1]
 
-=======
-<<<<<<< HEAD
-        similarities = similarities.drop(index = self.liked + self.seen, errors = 'ignore')
-        return similarities.nlargest(n, 0).index.values[-1]
-=======
-        similarities = similarities.drop(index = self.all)
-        return similarities.nlargest(n, 0).index.values[-1]
->>>>>>> ac4dfaee54ee52a97fec751f019a6c17298bace4
->>>>>>> a669377816330b1c7afc09212fbf70ea802aa0d9
+
